@@ -25,13 +25,13 @@
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
 	h1 {
 		font-size: 14px;
 	}
 	.c {
-    	width: 1.4em;
-    	height: 1.4em;
+    	width: 3.6em;
+    	height: 3.6em;
 	}
 	table {
 		margin: 0 auto;
