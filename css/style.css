@@ -24,16 +24,3 @@
     border-bottom: 0;
 }
 
-
-@media screen and (max-width: 800px) {
-	h1 {
-		font-size: 14px;
-	}
-	.c {
-    	width: 3.6em;
-    	height: 3.6em;
-	}
-	table {
-		margin: 0 auto;
-	}
-}
