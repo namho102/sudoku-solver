@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Sodoku Solver</title>
+		<link rel="stylesheet" href="css/style.css">
+		<!-- <link rel="stylesheet" href="css/normalize.css"> -->
+		<link rel="stylesheet" href="css/foundation.css">
+	</head>
+	<body>
+	<div class="row">
+		<h1 class="title">Soduko Solver</h1>
+	</div>
+
+	<div class="row">
+		<div class="large-4 large-offset-2 small-12 columns">
+			<table>
+			<tbody><tr>
+				<td valign="top">
+					<form class="board" >
+						<table cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td><input class="c v h" id="c11" maxlength="1" ></td>
+								<td><input class="c v h" id="c12" maxlength="1" ></td>
+								<td><input class="c   h" id="c13" maxlength="1" ></td>
+								<td><input class="c v h" id="c14" maxlength="1" ></td>
+								<td><input class="c v h" id="c15" maxlength="1" ></td>
+								<td><input class="c   h" id="c16" maxlength="1" ></td>
+								<td><input class="c v h" id="c17" maxlength="1" ></td>
+								<td><input class="c v h" id="c18" maxlength="1" ></td>
+								<td><input class="c   h" id="c19" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="c21" maxlength="1" ></td>
+								<td><input class="c v h" id="c22" maxlength="1" ></td>
+								<td><input class="c   h" id="c23" maxlength="1" ></td>
+								<td><input class="c v h" id="c24" maxlength="1" ></td>
+								<td><input class="c v h" id="c25" maxlength="1" ></td>
+								<td><input class="c   h" id="c26" maxlength="1" ></td>
+								<td><input class="c v h" id="c27" maxlength="1" ></td>
+								<td><input class="c v h" id="c28" maxlength="1" ></td>
+								<td><input class="c   h" id="c29" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v  " id="c31" maxlength="1" ></td>
+								<td><input class="c v  " id="c32" maxlength="1" ></td>
+								<td><input class="c    " id="c33" maxlength="1" ></td>
+								<td><input class="c v  " id="c34" maxlength="1" ></td>
+								<td><input class="c v  " id="c35" maxlength="1" ></td>
+								<td><input class="c    " id="c36" maxlength="1" ></td>
+								<td><input class="c v  " id="c37" maxlength="1" ></td>
+								<td><input class="c v  " id="c38" maxlength="1" ></td>
+								<td><input class="c    " id="c39" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="c41" maxlength="1" ></td>
+								<td><input class="c v h" id="c42" maxlength="1" ></td>
+								<td><input class="c   h" id="c43" maxlength="1" ></td>
+								<td><input class="c v h" id="c44" maxlength="1" ></td>
+								<td><input class="c v h" id="c45" maxlength="1" ></td>
+								<td><input class="c   h" id="c46" maxlength="1" ></td>
+								<td><input class="c v h" id="c47" maxlength="1" ></td>
+								<td><input class="c v h" id="c48" maxlength="1" ></td>
+								<td><input class="c   h" id="c49" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="c51" maxlength="1" ></td>
+								<td><input class="c v h" id="c52" maxlength="1" ></td>
+								<td><input class="c   h" id="c53" maxlength="1" ></td>
+								<td><input class="c v h" id="c54" maxlength="1" ></td>
+								<td><input class="c v h" id="c55" maxlength="1" ></td>
+								<td><input class="c   h" id="c56" maxlength="1" ></td>
+								<td><input class="c v h" id="c57" maxlength="1" ></td>
+								<td><input class="c v h" id="c58" maxlength="1" ></td>
+								<td><input class="c   h" id="c59" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v  " id="c61" maxlength="1" ></td>
+								<td><input class="c v  " id="c62" maxlength="1" ></td>
+								<td><input class="c    " id="c63" maxlength="1" ></td>
+								<td><input class="c v  " id="c64" maxlength="1" ></td>
+								<td><input class="c v  " id="c65" maxlength="1" ></td>
+								<td><input class="c    " id="c66" maxlength="1" ></td>
+								<td><input class="c v  " id="c67" maxlength="1" ></td>
+								<td><input class="c v  " id="c68" maxlength="1" ></td>
+								<td><input class="c    " id="c69" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="c71" maxlength="1" ></td>
+								<td><input class="c v h" id="c72" maxlength="1" ></td>
+								<td><input class="c   h" id="c73" maxlength="1" ></td>
+								<td><input class="c v h" id="c74" maxlength="1" ></td>
+								<td><input class="c v h" id="c75" maxlength="1" ></td>
+								<td><input class="c   h" id="c76" maxlength="1" ></td>
+								<td><input class="c v h" id="c77" maxlength="1" ></td>
+								<td><input class="c v h" id="c78" maxlength="1" ></td>
+								<td><input class="c   h" id="c79" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="c81" maxlength="1" ></td>
+								<td><input class="c v h" id="c82" maxlength="1" ></td>
+								<td><input class="c   h" id="c83" maxlength="1" ></td>
+								<td><input class="c v h" id="c84" maxlength="1" ></td>
+								<td><input class="c v h" id="c85" maxlength="1" ></td>
+								<td><input class="c   h" id="c86" maxlength="1" ></td>
+								<td><input class="c v h" id="c87" maxlength="1" ></td>
+								<td><input class="c v h" id="c88" maxlength="1" ></td>
+								<td><input class="c   h" id="c89" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v  " id="c91" maxlength="1" ></td>
+								<td><input class="c v  " id="c92" maxlength="1" ></td>
+								<td><input class="c    " id="c93" maxlength="1" ></td>
+								<td><input class="c v  " id="c94" maxlength="1" ></td>
+								<td><input class="c v  " id="c95" maxlength="1" ></td>
+								<td><input class="c    " id="c96" maxlength="1" ></td>
+								<td><input class="c v  " id="c97" maxlength="1" ></td>
+								<td><input class="c v  " id="c98" maxlength="1" ></td>
+								<td><input class="c    " id="c99" maxlength="1" ></td>
+							</tr>
+							<tr>
+								<td align="center" colspan="9" class="button-group">
+									<input type="reset" class="button">
+									<input type="button" id="solver" class="button" value="Solve">
+								</td>
+							</tr>
+						</tbody></table>
+					</form>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+		<div class="large-6 columns">
+			<table>
+			<tbody>
+				<tr>
+					<td valign="top">
+					<div class="board">
+						<table cellspacing="0" cellpadding="0">
+							<tbody><tr>
+								<td><input class="c v h" id="d11" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d12" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d13" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d14" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d15" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d16" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d17" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d18" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d19" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="d21" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d22" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d23" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d24" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d25" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d26" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d27" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d28" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d29" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v  " id="d31" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d32" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d33" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d34" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d35" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d36" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d37" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d38" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d39" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="d41" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d42" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d43" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d44" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d45" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d46" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d47" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d48" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d49" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="d51" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d52" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d53" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d54" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d55" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d56" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d57" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d58" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d59" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v  " id="d61" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d62" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d63" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d64" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d65" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d66" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d67" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d68" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d69" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="d71" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d72" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d73" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d74" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d75" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d76" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d77" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d78" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d79" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v h" id="d81" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d82" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d83" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d84" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d85" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d86" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d87" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v h" id="d88" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c   h" id="d89" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td><input class="c v  " id="d91" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d92" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d93" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d94" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d95" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d96" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d97" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c v  " id="d98" maxlength="1" readonly="readonly" ></td>
+								<td><input class="c    " id="d99" maxlength="1" readonly="readonly" ></td>
+							</tr>
+							<tr>
+								<td align="center" colspan="9" id="message">
+							<!-- 		<input type="reset" class="button" value="Result"> -->
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>
+		
+		
+		<script src="dist/solver.js"></script>
+	</body>
+</html>

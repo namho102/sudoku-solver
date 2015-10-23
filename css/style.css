@@ -1,0 +1,39 @@
+.title	{
+	text-align: center;
+}
+
+.board input.c {
+    font-size: 15pt;
+    text-align: center;
+}
+
+.board .button-group {
+	padding-top: 16px;
+}
+.c {
+    border: 1px #295967 solid;
+    width: 1.6em;
+    height: 1.6em;
+}
+
+.v {
+    border-right: 0;
+}
+
+.h {
+    border-bottom: 0;
+}
+
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 14px;
+	}
+	.c {
+    	width: 1.4em;
+    	height: 1.4em;
+	}
+	table {
+		margin: 0 auto;
+	}
+}
